@@ -1,0 +1,737 @@
+{
+  "Cardiology": [
+    {
+      "question": "A 65-year-old man presents with dyspnea. On examination, JVP is elevated 8 cm above the sternal angle at 45 degrees. What does this finding most likely indicate?",
+      "options": {
+        "A": "Normal central venous pressure",
+        "B": "Right heart failure or volume overload",
+        "C": "Left ventricular failure only",
+        "D": "Pericardial tamponade",
+        "E": "Constrictive pericarditis"
+      },
+      "correct": "B",
+      "explanation": "Normal JVP should be ≤3 cm above sternal angle at 45°. Elevation of 8 cm indicates elevated CVP, most commonly due to right heart failure or volume overload.",
+      "topic": "Physical Examination"
+    },
+    {
+      "question": "During cardiac examination, you palpate a thrill at the left lower sternal border in a child. This most likely corresponds to which murmur?",
+      "options": {
+        "A": "Mitral stenosis",
+        "B": "Aortic stenosis",
+        "C": "Ventricular septal defect",
+        "D": "Mitral regurgitation",
+        "E": "Pulmonary stenosis"
+      },
+      "correct": "C",
+      "explanation": "A thrill at the left lower sternal border typically accompanies the harsh holosystolic murmur of VSD. Thrills are palpable vibrations associated with grade 4 or higher murmurs.",
+      "topic": "Physical Examination"
+    },
+    {
+      "question": "A 72-year-old woman with heart failure has hepatojugular reflux test performed. A sustained rise in JVP >4 cm for more than 2 cardiac cycles indicates:",
+      "options": {
+        "A": "Normal right ventricular function",
+        "B": "Elevated right atrial pressure and right ventricular dysfunction",
+        "C": "Hypovolemia",
+        "D": "Constrictive pericarditis only",
+        "E": "Tricuspid stenosis"
+      },
+      "correct": "B",
+      "explanation": "Positive hepatojugular reflux (sustained JVP rise ≥4 cm for >2 cardiac cycles) indicates elevated right atrial pressure and impaired right ventricular compliance, commonly seen in heart failure.",
+      "topic": "Physical Examination"
+    },
+    {
+      "question": "A holosystolic murmur is heard best at the left lower sternal border with radiation to the right sternal border and increases with inspiration. This is most consistent with:",
+      "options": {
+        "A": "Mitral regurgitation",
+        "B": "Aortic stenosis",
+        "C": "Tricuspid regurgitation",
+        "D": "Pulmonary stenosis",
+        "E": "Aortic regurgitation"
+      },
+      "correct": "C",
+      "explanation": "Tricuspid regurgitation produces a holosystolic murmur best heard at the left lower sternal border, increases with inspiration (Carvallo's sign).",
+      "topic": "Physical Examination"
+    },
+    {
+      "question": "Pulsus paradoxus (>10 mmHg drop in systolic BP during inspiration) is most characteristic of:",
+      "options": {
+        "A": "Aortic stenosis",
+        "B": "Mitral regurgitation",
+        "C": "Cardiac tamponade",
+        "D": "Hypertrophic cardiomyopathy",
+        "E": "Mitral stenosis"
+      },
+      "correct": "C",
+      "explanation": "Pulsus paradoxus is a hallmark of cardiac tamponade, also seen in severe asthma and constrictive pericarditis.",
+      "topic": "Physical Examination"
+    },
+    {
+      "question": "A 62-year-old man with chest pain has an ECG showing ST elevation in leads II, III, and aVF with ST depression in leads I, aVL, V2-V6. Which coronary artery is most likely occluded?",
+      "options": {
+        "A": "Left anterior descending artery",
+        "B": "Left circumflex artery",
+        "C": "Right coronary artery",
+        "D": "Left main coronary artery",
+        "E": "Obtuse marginal branch"
+      },
+      "correct": "C",
+      "explanation": "ST elevation in inferior leads (II, III, aVF) with reciprocal depression indicates inferior STEMI, typically from right coronary artery occlusion.",
+      "topic": "ECG Interpretation"
+    },
+    {
+      "question": "An ECG shows ST elevation in leads V1-V4 with new Q waves. Which myocardial territory is involved?",
+      "options": {
+        "A": "Inferior wall",
+        "B": "Lateral wall",
+        "C": "Anterior wall",
+        "D": "Posterior wall",
+        "E": "Right ventricle"
+      },
+      "correct": "C",
+      "explanation": "ST elevation in precordial leads V1-V4 with Q wave formation indicates anterior wall STEMI, typically from LAD occlusion.",
+      "topic": "ECG Interpretation"
+    },
+    {
+      "question": "An ECG shows irregularly irregular rhythm with absent P waves and variable R-R intervals. Diagnosis?",
+      "options": {
+        "A": "Sinus arrhythmia",
+        "B": "Atrial fibrillation",
+        "C": "Atrial flutter with variable block",
+        "D": "Multifocal atrial tachycardia",
+        "E": "Wandering atrial pacemaker"
+      },
+      "correct": "B",
+      "explanation": "Irregularly irregular rhythm with absent P waves (replaced by fibrillatory waves) is diagnostic of atrial fibrillation.",
+      "topic": "ECG Interpretation"
+    },
+    {
+      "question": "An ECG shows progressive PR interval prolongation followed by a dropped QRS complex, then the cycle repeats. This is:",
+      "options": {
+        "A": "First-degree AV block",
+        "B": "Second-degree AV block Mobitz I (Wenckebach)",
+        "C": "Second-degree AV block Mobitz II",
+        "D": "Third-degree heart block",
+        "E": "Sinus arrest"
+      },
+      "correct": "B",
+      "explanation": "Progressive PR prolongation before dropped beat is characteristic of Mobitz I (Wenckebach) block.",
+      "topic": "ECG Interpretation"
+    },
+    {
+      "question": "An ECG shows diffuse ST elevation with PR depression in multiple leads and upward concavity. Most likely diagnosis?",
+      "options": {
+        "A": "Acute myocardial infarction",
+        "B": "Acute pericarditis",
+        "C": "Early repolarization",
+        "D": "Left ventricular hypertrophy",
+        "E": "Brugada syndrome"
+      },
+      "correct": "B",
+      "explanation": "Diffuse ST elevation (concave upward) with PR depression in multiple leads is characteristic of acute pericarditis.",
+      "topic": "ECG Interpretation"
+    }
+  ],
+  "Pulmonology": [
+    {
+      "question": "A 68-year-old smoker presents with progressive dyspnea. Spirometry shows FEV1/FVC <0.70 post-bronchodilator. According to GOLD criteria, this confirms:",
+      "options": {
+        "A": "Asthma",
+        "B": "Restrictive lung disease",
+        "C": "COPD",
+        "D": "Bronchiectasis",
+        "E": "Normal for age"
+      },
+      "correct": "C",
+      "explanation": "Post-bronchodilator FEV1/FVC <0.70 is the spirometric criterion for COPD diagnosis according to GOLD guidelines.",
+      "topic": "COPD"
+    },
+    {
+      "question": "A COPD patient has FEV1 45% predicted with ≥2 exacerbations per year. GOLD classification?",
+      "options": {
+        "A": "GOLD 1, Group A",
+        "B": "GOLD 2, Group B",
+        "C": "GOLD 3, Group E",
+        "D": "GOLD 2, Group D",
+        "E": "GOLD 4, Group D"
+      },
+      "correct": "C",
+      "explanation": "FEV1 30-50% = GOLD 3. With ≥2 exacerbations/year = Group E (high risk).",
+      "topic": "COPD"
+    },
+    {
+      "question": "A 25-year-old with asthma has FEV1 improve by 15% and 250 mL after bronchodilator. This indicates:",
+      "options": {
+        "A": "COPD",
+        "B": "Significant reversibility supporting asthma diagnosis",
+        "C": "Restrictive lung disease",
+        "D": "Normal response",
+        "E": "Bronchiectasis"
+      },
+      "correct": "B",
+      "explanation": "Increase in FEV1 ≥12% AND ≥200 mL post-bronchodilator indicates significant reversibility, supporting asthma diagnosis.",
+      "topic": "Asthma"
+    },
+    {
+      "question": "A 45-year-old presents with fever, productive cough, and consolidation on chest X-ray. CURB-65 score is 2. Recommended management?",
+      "options": {
+        "A": "Outpatient oral antibiotics",
+        "B": "Consider hospital admission",
+        "C": "ICU admission required",
+        "D": "No antibiotics needed",
+        "E": "Observation only"
+      },
+      "correct": "B",
+      "explanation": "CURB-65 score 2 indicates moderate severity pneumonia with consideration for hospital admission.",
+      "topic": "Pneumonia"
+    },
+    {
+      "question": "A 68-year-old woman is hospitalized for acute exacerbation of COPD. She has chronic hypercapnia. On room air, her PaCO2 is 55 mmHg and PaO2 is 52 mmHg. What is the primary mechanism of hypoxemia in COPD exacerbation?",
+      "options": {
+        "A": "Shunt",
+        "B": "Diffusion impairment",
+        "C": "Hypoventilation",
+        "D": "V/Q mismatch",
+        "E": "Dead space ventilation"
+      },
+      "correct": "D",
+      "explanation": "V/Q mismatch is the primary mechanism of hypoxemia in COPD.",
+      "topic": "COPD"
+    }
+  ],
+  "Gastroenterology": [
+    {
+      "question": "What is the most common cause of acute upper gastrointestinal hemorrhage?",
+      "options": {
+        "A": "Esophageal varices",
+        "B": "Gastric ulcer",
+        "C": "Peptic ulcer disease",
+        "D": "Mallory-Weiss tear",
+        "E": "Gastric cancer"
+      },
+      "correct": "C",
+      "explanation": "Peptic ulcer disease (duodenal and gastric ulcers) is the most common cause of acute upper GI bleeding.",
+      "topic": "GI Bleeding"
+    },
+    {
+      "question": "A cirrhotic patient has ascites with SAAG (serum-ascites albumin gradient) >1.1 g/dL. This indicates:",
+      "options": {
+        "A": "Peritoneal carcinomatosis",
+        "B": "Tuberculous peritonitis",
+        "C": "Portal hypertension",
+        "D": "Pancreatic ascites",
+        "E": "Nephrotic syndrome"
+      },
+      "correct": "C",
+      "explanation": "SAAG ≥1.1 g/dL indicates portal hypertension-related ascites.",
+      "topic": "Liver Cirrhosis"
+    },
+    {
+      "question": "Acute pancreatitis initial fluid resuscitation rate according to guidelines?",
+      "options": {
+        "A": "10-20 mL/kg/hour of isotonic crystalloid",
+        "B": "5-10 mL/kg/hour of 5% glucose",
+        "C": "5-10 mL/kg/hour of isotonic crystalloid",
+        "D": "10-15 mL/kg/hour of crystalloid",
+        "E": "20-30 mL/kg bolus"
+      },
+      "correct": "C",
+      "explanation": "Initial fluid resuscitation should be 5-10 mL/kg/hour of isotonic crystalloid.",
+      "topic": "Pancreatitis"
+    },
+    {
+      "question": "A 45-year-old patient presents with abdominal pain and diarrhea. Labs show elevated blood glucose and low amino acid levels. Imaging reveals a pancreatic mass. Most likely diagnosis?",
+      "options": {
+        "A": "Insulinoma",
+        "B": "Gastrinoma",
+        "C": "Glucagonoma",
+        "D": "VIPoma",
+        "E": "Somatostatinoma"
+      },
+      "correct": "C",
+      "explanation": "Glucagonoma presents with hyperglycemia, necrolytic migratory erythema, and low amino acids.",
+      "topic": "Pancreatic Tumors"
+    },
+    {
+      "question": "A patient with Crohn's disease has inflammation from mouth to anus with skip lesions and transmural involvement. Which finding is most characteristic?",
+      "options": {
+        "A": "Continuous inflammation",
+        "B": "Mucosal inflammation only",
+        "C": "Skip lesions and fistulas",
+        "D": "Rectal involvement always",
+        "E": "Pseudopolyps"
+      },
+      "correct": "C",
+      "explanation": "Crohn's disease has skip lesions, transmural inflammation, and can form fistulas/strictures.",
+      "topic": "IBD"
+    }
+  ],
+  "Nephrology": [
+    {
+      "question": "A patient has AKI. Urine sodium is 10 mEq/L and FENa is 0.8%. This suggests:",
+      "options": {
+        "A": "Acute tubular necrosis",
+        "B": "Prerenal azotemia",
+        "C": "Acute interstitial nephritis",
+        "D": "Post-renal obstruction",
+        "E": "Glomerulonephritis"
+      },
+      "correct": "B",
+      "explanation": "FENa <1% suggests prerenal AKI where kidneys avidly retain sodium.",
+      "topic": "Acute Kidney Injury"
+    },
+    {
+      "question": "Nephrotic syndrome is characterized by all EXCEPT:",
+      "options": {
+        "A": "Proteinuria >3.5 g/day",
+        "B": "Hypoalbuminemia",
+        "C": "Edema",
+        "D": "Hematuria and RBC casts",
+        "E": "Hyperlipidemia"
+      },
+      "correct": "D",
+      "explanation": "Hematuria and RBC casts suggest nephritic syndrome, not nephrotic syndrome.",
+      "topic": "Nephrotic Syndrome"
+    },
+    {
+      "question": "A 43-year-old man presents with fatigue and body swelling. BP 128/86. Exam shows periorbital edema and extremity edema. Labs: proteinuria, hypoalbuminemia. Which finding is also likely present?",
+      "options": {
+        "A": "Hematuria",
+        "B": "Hypocholesterolemia",
+        "C": "Hypercholesterolemia",
+        "D": "Thrombocytopenia",
+        "E": "Elevated C3/C4"
+      },
+      "correct": "C",
+      "explanation": "Nephrotic syndrome is associated with hyperlipidemia.",
+      "topic": "Nephrotic Syndrome"
+    },
+    {
+      "question": "A 54-year-old man presents with severe nausea, vomiting, and diarrhea for 3 days. He takes lisinopril and ibuprofen. Exam shows tachycardia, BP 104/84, dry mucous membranes. BUN 40 mg/dL, Cr 2.1 mg/dL. What test would help determine etiology?",
+      "options": {
+        "A": "Fractional excretion of sodium (FENa)",
+        "B": "Renal ultrasound",
+        "C": "Urine protein/creatinine ratio",
+        "D": "Serum complement levels",
+        "E": "Anti-GBM antibodies"
+      },
+      "correct": "A",
+      "explanation": "FENa helps distinguish prerenal AKI from intrinsic renal injury.",
+      "topic": "Acute Kidney Injury"
+    },
+    {
+      "question": "A 65-year-old diabetic with CKD stage 4 (eGFR 25) presents with fatigue and weakness. ECG shows peaked T waves. Most urgent intervention?",
+      "options": {
+        "A": "Start dialysis",
+        "B": "IV calcium gluconate",
+        "C": "Oral potassium binders",
+        "D": "Insulin and glucose",
+        "E": "Check serum potassium level"
+      },
+      "correct": "B",
+      "explanation": "Peaked T waves suggest hyperkalemia with cardiac toxicity. IV calcium gluconate stabilizes cardiac membrane.",
+      "topic": "Electrolyte Disorders"
+    }
+  ],
+  "Endocrinology": [
+    {
+      "question": "Diabetic ketoacidosis is characterized by which of the following? 1) Serum glucose 350-500 mg/dL 2) Positive urine ketones 3) High serum ketones 4) Effective osmolality >320",
+      "options": {
+        "A": "1, 2, 3, 4",
+        "B": "2, 3 only",
+        "C": "1, 3 only",
+        "D": "1, 2, 3 only",
+        "E": "1, 4 only"
+      },
+      "correct": "D",
+      "explanation": "DKA has glucose 350-500 mg/dL, positive ketones. Osmolality >320 is more typical of HHS.",
+      "topic": "Diabetes"
+    },
+    {
+      "question": "In DKA management, when should insulin therapy be initiated?",
+      "options": {
+        "A": "Immediately in all patients",
+        "B": "Only when serum potassium ≥3.3 mEq/L",
+        "C": "Only when serum potassium <3.3 mEq/L",
+        "D": "After potassium replacement is complete",
+        "E": "Before potassium replacement"
+      },
+      "correct": "B",
+      "explanation": "Insulin should be held if K+ <3.3 mEq/L to avoid life-threatening hypokalemia.",
+      "topic": "Diabetes"
+    },
+    {
+      "question": "Primary hypothyroidism shows which laboratory pattern?",
+      "options": {
+        "A": "High TSH, high free T4",
+        "B": "Low TSH, low free T4",
+        "C": "High TSH, low free T4",
+        "D": "Normal TSH, low free T4",
+        "E": "Low TSH, high free T4"
+      },
+      "correct": "C",
+      "explanation": "Primary hypothyroidism shows elevated TSH with low free T4.",
+      "topic": "Thyroid Disorders"
+    },
+    {
+      "question": "Which insulin type should be used for initial IV therapy in DKA?",
+      "options": {
+        "A": "Long-acting analogs",
+        "B": "Super rapid-acting analogs",
+        "C": "Intermediate-acting (NPH)",
+        "D": "Regular or rapid-acting insulin",
+        "E": "Combination regular and NPH"
+      },
+      "correct": "D",
+      "explanation": "Regular insulin or rapid-acting analogs are used for IV infusion in DKA.",
+      "topic": "Diabetes"
+    },
+    {
+      "question": "A 35-year-old woman presents with weight gain, facial rounding, purple striae, and hypertension. 24-hour urinary cortisol is elevated. What is the next best test?",
+      "options": {
+        "A": "ACTH level",
+        "B": "Dexamethasone suppression test",
+        "C": "MRI pituitary",
+        "D": "CT adrenals",
+        "E": "Repeat urinary cortisol"
+      },
+      "correct": "B",
+      "explanation": "After confirming hypercortisolism, dexamethasone suppression test helps confirm Cushing's syndrome.",
+      "topic": "Adrenal Disorders"
+    }
+  ],
+  "Rheumatology": [
+    {
+      "question": "A 40-year-old woman has 7 weeks of pain and swelling in wrists and knees. MCP joints are warm and tender. Morning stiffness >1 hour. Most likely diagnosis?",
+      "options": {
+        "A": "Systemic lupus erythematosus",
+        "B": "Rheumatoid arthritis",
+        "C": "Osteoarthritis",
+        "D": "Chronic fatigue syndrome",
+        "E": "Polymyalgia rheumatica"
+      },
+      "correct": "B",
+      "explanation": "Symmetrical swelling of MCP joints >6 weeks with morning stiffness suggests RA.",
+      "topic": "Rheumatoid Arthritis"
+    },
+    {
+      "question": "Which finding would be expected in active SLE?",
+      "options": {
+        "A": "Elevated C3 and C4",
+        "B": "Negative ANA",
+        "C": "Low C3 and C4 with positive anti-dsDNA",
+        "D": "Rheumatoid factor positive only",
+        "E": "Anti-CCP antibodies"
+      },
+      "correct": "C",
+      "explanation": "Active SLE shows low complement and positive anti-dsDNA antibodies.",
+      "topic": "Systemic Lupus Erythematosus"
+    },
+    {
+      "question": "A 28-year-old man presents with low back pain worse at night, improves with exercise. Morning stiffness >1 hour. X-ray shows sacroiliitis. Most likely diagnosis?",
+      "options": {
+        "A": "Rheumatoid arthritis",
+        "B": "Ankylosing spondylitis",
+        "C": "Osteoarthritis",
+        "D": "Mechanical back pain",
+        "E": "Spinal stenosis"
+      },
+      "correct": "B",
+      "explanation": "Inflammatory back pain with sacroiliitis suggests ankylosing spondylitis.",
+      "topic": "Spondyloarthropathies"
+    },
+    {
+      "question": "A patient has acute monoarthritis with negatively birefringent needle-shaped crystals on synovial fluid analysis. Diagnosis?",
+      "options": {
+        "A": "Septic arthritis",
+        "B": "Gout",
+        "C": "Pseudogout",
+        "D": "Rheumatoid arthritis",
+        "E": "Osteoarthritis"
+      },
+      "correct": "B",
+      "explanation": "Negatively birefringent needle-shaped crystals are pathognomonic for gout (monosodium urate).",
+      "topic": "Crystal Arthropathies"
+    },
+    {
+      "question": "A patient has positively birefringent rhomboid crystals on synovial fluid analysis. Diagnosis?",
+      "options": {
+        "A": "Gout",
+        "B": "Pseudogout (CPPD)",
+        "C": "Septic arthritis",
+        "D": "Rheumatoid arthritis",
+        "E": "Reactive arthritis"
+      },
+      "correct": "B",
+      "explanation": "Positively birefringent rhomboid crystals indicate pseudogout (calcium pyrophosphate deposition).",
+      "topic": "Crystal Arthropathies"
+    }
+  ],
+  "Hematology": [
+    {
+      "question": "A 45-year-old woman presents with petechiae and gum bleeding. Platelet count 15,000. Hemoglobin and WBC normal. Most likely diagnosis?",
+      "options": {
+        "A": "Aplastic anemia",
+        "B": "Acute leukemia",
+        "C": "Immune thrombocytopenic purpura (ITP)",
+        "D": "Thrombotic thrombocytopenic purpura (TTP)",
+        "E": "Disseminated intravascular coagulation (DIC)"
+      },
+      "correct": "C",
+      "explanation": "Isolated thrombocytopenia with normal other cell lines suggests ITP.",
+      "topic": "Thrombocytopenia"
+    },
+    {
+      "question": "A patient has anemia with MCV 68 fL, low ferritin, and high TIBC. Diagnosis?",
+      "options": {
+        "A": "Thalassemia",
+        "B": "Iron deficiency anemia",
+        "C": "Anemia of chronic disease",
+        "D": "Sideroblastic anemia",
+        "E": "Vitamin B12 deficiency"
+      },
+      "correct": "B",
+      "explanation": "Microcytic anemia with low ferritin and high TIBC is diagnostic of iron deficiency.",
+      "topic": "Anemia"
+    },
+    {
+      "question": "A 60-year-old man has fatigue. Labs: Hb 8 g/dL, MCV 105 fL, low reticulocytes. Peripheral smear shows hypersegmented neutrophils. Most likely diagnosis?",
+      "options": {
+        "A": "Iron deficiency anemia",
+        "B": "Thalassemia",
+        "C": "Vitamin B12 or folate deficiency",
+        "D": "Anemia of chronic disease",
+        "E": "Hemolytic anemia"
+      },
+      "correct": "C",
+      "explanation": "Macrocytic anemia with hypersegmented neutrophils is classic for B12/folate deficiency.",
+      "topic": "Anemia"
+    },
+    {
+      "question": "A 35-year-old Black man presents with jaundice after starting primaquine. Labs show hemolysis. Most likely enzyme deficiency?",
+      "options": {
+        "A": "Pyruvate kinase",
+        "B": "G6PD",
+        "C": "Hexokinase",
+        "D": "Aldolase",
+        "E": "Enolase"
+      },
+      "correct": "B",
+      "explanation": "G6PD deficiency causes episodic hemolysis triggered by oxidant drugs like primaquine.",
+      "topic": "Hemolytic Anemia"
+    },
+    {
+      "question": "A patient with DVT is started on warfarin. Target INR for most conditions is:",
+      "options": {
+        "A": "1.5-2.0",
+        "B": "2.0-3.0",
+        "C": "3.0-4.0",
+        "D": "4.0-5.0",
+        "E": "1.0-1.5"
+      },
+      "correct": "B",
+      "explanation": "Target INR for most indications (DVT, PE, atrial fibrillation) is 2.0-3.0.",
+      "topic": "Anticoagulation"
+    }
+  ],
+  "Infectious Diseases": [
+    {
+      "question": "In febrile neutropenic high-risk patients, when should empiric antibiotics be initiated?",
+      "options": {
+        "A": "Within 30-60 minutes after blood cultures obtained",
+        "B": "After blood culture results available",
+        "C": "Before obtaining blood cultures",
+        "D": "After imaging completed",
+        "E": "Only if fever persists >24 hours"
+      },
+      "correct": "A",
+      "explanation": "Empiric antibiotics should be started within 30-60 minutes in febrile neutropenia, after blood cultures drawn.",
+      "topic": "Neutropenic Fever"
+    },
+    {
+      "question": "Initial antibiotic regimen for neutropenic fever in high-risk patients?",
+      "options": {
+        "A": "Vancomycin monotherapy",
+        "B": "Ciprofloxacin monotherapy",
+        "C": "Amoxicillin-clavulanate",
+        "D": "Cefuroxime monotherapy",
+        "E": "Antipseudomonal beta-lactam (cefepime, meropenem, or piperacillin-tazobactam)"
+      },
+      "correct": "E",
+      "explanation": "Initial therapy should include antipseudomonal beta-lactam coverage.",
+      "topic": "Neutropenic Fever"
+    },
+    {
+      "question": "A 35-year-old with HIV (CD4 50) presents with fever, headache, and altered mental status. CSF shows lymphocytic pleocytosis, low glucose, high protein. India ink stain positive. Treatment?",
+      "options": {
+        "A": "Amphotericin B + flucytosine",
+        "B": "Ceftriaxone + vancomycin",
+        "C": "Acyclovir",
+        "D": "Pyrimethamine + sulfadiazine",
+        "E": "Fluconazole monotherapy"
+      },
+      "correct": "A",
+      "explanation": "Cryptococcal meningitis is treated with amphotericin B plus flucytosine induction.",
+      "topic": "Opportunistic Infections"
+    },
+    {
+      "question": "A patient with TB is started on rifampin, isoniazid, pyrazinamide, and ethambutol. Which vitamin should be supplemented?",
+      "options": {
+        "A": "Vitamin B6 (pyridoxine)",
+        "B": "Vitamin B12",
+        "C": "Vitamin C",
+        "D": "Vitamin D",
+        "E": "Vitamin K"
+      },
+      "correct": "A",
+      "explanation": "Pyridoxine (B6) supplementation prevents isoniazid-induced peripheral neuropathy.",
+      "topic": "Tuberculosis"
+    },
+    {
+      "question": "A patient has positive blood cultures with gram-positive cocci in clusters. Most likely organism?",
+      "options": {
+        "A": "Streptococcus pneumoniae",
+        "B": "Staphylococcus aureus",
+        "C": "Enterococcus",
+        "D": "Streptococcus pyogenes",
+        "E": "Streptococcus viridans"
+      },
+      "correct": "B",
+      "explanation": "Gram-positive cocci in clusters are characteristic of Staphylococcus species.",
+      "topic": "Bacteremia"
+    }
+  ],
+  "Neurology": [
+    {
+      "question": "Before administering alteplase for ischemic stroke, blood pressure should be controlled to:",
+      "options": {
+        "A": "Systolic ≤205 and diastolic ≤115 mmHg",
+        "B": "Systolic <220 and diastolic <120 mmHg",
+        "C": "Systolic ≤185 and diastolic ≤110 mmHg",
+        "D": "Systolic ≤185 and diastolic ≤120 mmHg",
+        "E": "Systolic ≤195 and diastolic ≤110 mmHg"
+      },
+      "correct": "C",
+      "explanation": "Before thrombolysis, BP must be ≤185/110 mmHg to reduce hemorrhagic transformation risk.",
+      "topic": "Stroke"
+    },
+    {
+      "question": "Alteplase dosing in ischemic stroke?",
+      "options": {
+        "A": "0.9 mg/kg (max 90 mg), 20% bolus, rest over 1 hour",
+        "B": "0.9 mg/kg (max 75 mg), 10% bolus, rest over 1 hour",
+        "C": "0.9 mg/kg (max 90 mg), 10% bolus, rest over 2 hours",
+        "D": "0.9 mg/kg (max 90 mg), 10% bolus, rest over 3 hours",
+        "E": "0.9 mg/kg (max 90 mg), 10% bolus, rest over 1 hour"
+      },
+      "correct": "E",
+      "explanation": "Standard alteplase: 0.9 mg/kg (max 90 mg), 10% bolus, 90% over 1 hour.",
+      "topic": "Stroke"
+    },
+    {
+      "question": "Most predictive examination findings for acute stroke?",
+      "options": {
+        "A": "Seizures",
+        "B": "Syncope",
+        "C": "Dizziness and vomiting",
+        "D": "Facial paresis, arm drift/weakness, abnormal speech",
+        "E": "Visual hallucinations"
+      },
+      "correct": "D",
+      "explanation": "Focal neurologic deficits (facial paresis, arm weakness, speech) are most predictive of stroke.",
+      "topic": "Stroke"
+    },
+    {
+      "question": "First-line treatment for status epilepticus in emergency department?",
+      "options": {
+        "A": "Phenytoin IV",
+        "B": "Lorazepam or diazepam IV",
+        "C": "Phenobarbital IV",
+        "D": "Levetiracetam IV",
+        "E": "Valproic acid IV"
+      },
+      "correct": "B",
+      "explanation": "Benzodiazepines (lorazepam or diazepam IV) are first-line for status epilepticus.",
+      "topic": "Seizures"
+    },
+    {
+      "question": "A patient has acute onset worst headache of life with neck stiffness. CT head is negative. Next best step?",
+      "options": {
+        "A": "Discharge home",
+        "B": "MRI brain",
+        "C": "Lumbar puncture",
+        "D": "Observation",
+        "E": "Migraine treatment"
+      },
+      "correct": "C",
+      "explanation": "Thunderclap headache with negative CT requires LP to rule out subarachnoid hemorrhage.",
+      "topic": "Headache"
+    }
+  ],
+  "Critical Care Medicine": [
+    {
+      "question": "ARDS Berlin criteria requires PaO2/FiO2 ratio:",
+      "options": {
+        "A": "<300 mmHg",
+        "B": "<250 mmHg",
+        "C": "<200 mmHg",
+        "D": "<150 mmHg",
+        "E": "<100 mmHg"
+      },
+      "correct": "A",
+      "explanation": "ARDS requires PaO2/FiO2 ≤300 mmHg with PEEP ≥5. Mild: 200-300, Moderate: 100-200, Severe: <100.",
+      "topic": "ARDS"
+    },
+    {
+      "question": "Lung protective ventilation in ARDS uses tidal volume of:",
+      "options": {
+        "A": "10-12 mL/kg ideal body weight",
+        "B": "8-10 mL/kg ideal body weight",
+        "C": "6-8 mL/kg ideal body weight",
+        "D": "4-6 mL/kg ideal body weight",
+        "E": "12-15 mL/kg ideal body weight"
+      },
+      "correct": "C",
+      "explanation": "Lung protective strategy uses low tidal volume 6-8 mL/kg IBW (typically 6 mL/kg).",
+      "topic": "ARDS"
+    },
+    {
+      "question": "Septic shock is defined as sepsis with:",
+      "options": {
+        "A": "Hypotension requiring vasopressors and lactate >2 mmol/L",
+        "B": "Fever >38.5°C",
+        "C": "WBC >12,000",
+        "D": "Positive blood cultures",
+        "E": "Organ dysfunction"
+      },
+      "correct": "A",
+      "explanation": "Septic shock = sepsis + hypotension requiring vasopressors + lactate >2 mmol/L despite adequate fluids.",
+      "topic": "Sepsis"
+    },
+    {
+      "question": "Cornerstones of initial anaphylaxis management include?",
+      "options": {
+        "A": "Remove trigger and call for help",
+        "B": "IM epinephrine",
+        "C": "Supine position with legs elevated",
+        "D": "Oxygen and IV fluids",
+        "E": "All of the above"
+      },
+      "correct": "E",
+      "explanation": "Anaphylaxis management includes removing trigger, IM epinephrine, positioning, oxygen, and fluids.",
+      "topic": "Anaphylaxis"
+    },
+    {
+      "question": "Regarding antibiotics in acute pancreatitis, prophylactic antibiotics are:",
+      "options": {
+        "A": "Recommended for all severe pancreatitis",
+        "B": "Recommended for necrotizing pancreatitis",
+        "C": "NOT recommended regardless of severity",
+        "D": "Recommended if WBC >15,000",
+        "E": "Recommended if fever present"
+      },
+      "correct": "C",
+      "explanation": "Prophylactic antibiotics are NOT recommended in pancreatitis; start only if infection suspected.",
+      "topic": "Pancreatitis"
+    }
+  ]
+}

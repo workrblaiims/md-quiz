@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MD Medicine Quiz Master</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Comprehensive MD Medicine quiz with 2,750+ clinical questions from Harrison's">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- iOS Specific Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MD Quiz">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="icon" type="image/png" href="icon-192.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            padding-top: max(20px, env(safe-area-inset-top));
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .topic-item:active {
+            transform: scale(0.98);
+        }
+
+        .topic-item:hover {
+            background: #e9ecef;
+        }
+
+        .topic-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .topic-item label {
+            cursor: pointer;
+            font-size: 0.95em;
+            color: #495057;
+            margin: 0;
+            flex: 1;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .question-counter {
+            font-size: 1em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .selected-topics {
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #212529;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .option:active {
+            transform: scale(0.98);
+        }
+
+        .option.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .option-label {
+            font-weight: 600;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .option-text {
+            flex: 1;
+        }
+
+        .results-container {
+            text-align: center;
+        }
+
+        .results-header {
+            margin-bottom: 30px;
+        }
+
+        .results-header h2 {
+            font-size: 1.8em;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+
+        .user-name {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .stat-card.correct {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .stat-card.wrong {
+            background: linear-gradient(135deg, #dc3545, #fd7e14);
+        }
+
+        .stat-card.missed {
+            background: linear-gradient(135deg, #6c757d, #adb5bd);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .performance-box {
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .performance-box h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .performance-text {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .review-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .review-section h3 {
+            font-size: 1.5em;
+            color: #212529;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .review-question {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #adb5bd;
+        }
+
+        .review-question.correct-answer {
+            border-left-color: #28a745;
+        }
+
+        .review-question.wrong-answer {
+            border-left-color: #dc3545;
+        }
+
+        .review-q-text {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #212529;
+        }
+
+        .review-answer {
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .review-answer.user-answer {
+            background: #e7f3ff;
+            border-left: 3px solid #0066cc;
+        }
+
+        .review-answer.correct-answer-show {
+            background: #d4edda;
+            border-left: 3px solid #28a745;
+        }
+
+        .review-explanation {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-style: italic;
+            color: #495057;
+            font-size: 0.9em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Install prompt styles */
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: none;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 90%;
+        }
+
+        .install-prompt.show {
+            display: flex;
+        }
+
+        .install-prompt button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <span>📱 Install this app on your device!</span>
+        <button onclick="hideInstallPrompt()">Later</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🩺 MD Medicine Quiz Master</h1>
+            <p>Test Your Clinical Knowledge</p>
+        </div>
+
+        <!-- Setup Page -->
+        <div id="setupPage" class="content">
+            <div class="form-group">
+                <label for="userName">Your Name *</label>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="questionCount">Number of Questions (1-20) *</label>
+                <input type="number" id="questionCount" min="1" max="20" value="10" required>
+            </div>
+
+            <div class="form-group">
+                <label>Select Topics * (Choose at least one)</label>
+                <div class="topics-grid" id="topicsGrid"></div>
+            </div>
+
+            <button class="btn btn-primary" id="startQuizBtn" onclick="startQuiz()" disabled>Start Quiz</button>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quizPage" class="content hidden">
+            <div class="question-container">
+                <div class="question-header">
+                    <span class="question-counter" id="questionCounter"></span>
+                    <span class="selected-topics" id="selectedTopicsDisplay"></span>
+                </div>
+                <div class="question-text" id="questionText"></div>
+                <div class="options-container" id="optionsContainer"></div>
+            </div>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        </div>
+
+        <!-- Results Page -->
+        <div id="resultsPage" class="content hidden">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2>Quiz Complete!</h2>
+                    <p class="user-name" id="resultUserName"></p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card correct">
+                        <div class="stat-number" id="correctCount">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-card wrong">
+                        <div class="stat-number" id="wrongCount">0</div>
+                        <div class="stat-label">Wrong</div>
+                    </div>
+                    <div class="stat-card missed">
+                        <div class="stat-number" id="missedCount">0</div>
+                        <div class="stat-label">Missed</div>
+                    </div>
+                </div>
+
+                <div class="performance-box">
+                    <h3>Your Performance</h3>
+                    <p class="performance-text" id="performanceText"></p>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="resultsChart" width="400" height="200"></canvas>
+                </div>
+
+                <button class="btn btn-primary" onclick="location.reload()">Retake Quiz</button>
+
+                <div class="review-section">
+                    <h3>📋 Answer Review</h3>
+                    <div id="reviewContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // PWA Installation
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPrompt').classList.add('show');
+        });
+
+        function hideInstallPrompt() {
+            document.getElementById('installPrompt').classList.remove('show');
+        }
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed'));
+        }
+
+        // Load questions from external JSON
+        let questionBank = {};
+
+        fetch('./questions.json')
+            .then(response => response.json())
+            .then(data => {
+                questionBank = data;
+                init();
+            })
+            .catch(error => {
+                console.error('Error loading questions:', error);
+                alert('Error loading question bank. Please ensure questions.json is in the same folder.');
+            });
+
+        let currentState = {
+            userName: '',
+            questionCount: 10,
+            selectedTopics: [],
+            currentQuestions: [],
+            currentQuestionIndex: 0,
+            userAnswers: [],
+            startTime: null
+        };
+
+        function init() {
+            if (Object.keys(questionBank).length > 0) {
+                populateTopics();
+                setupEventListeners();
+            }
+        }
+
+        function populateTopics() {
+            const topicsGrid = document.getElementById('topicsGrid');
+            const topics = Object.keys(questionBank);
+
+            topics.forEach(topic => {
+                const topicItem = document.createElement('div');
+                topicItem.className = 'topic-item';
+                topicItem.onclick = function() {
+                    const checkbox = this.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                    validateForm();
+                };
+
+                topicItem.innerHTML = `
+                    <input type="checkbox" id="topic-${topic}" value="${topic}" onclick="event.stopPropagation(); validateForm();">
+                    <label for="topic-${topic}">${topic}</label>
+                `;
+
+                topicsGrid.appendChild(topicItem);
+            });
+        }
+
+        function setupEventListeners() {
+            document.getElementById('userName').addEventListener('input', validateForm);
+            document.getElementById('questionCount').addEventListener('input', validateForm);
+        }
+
+        function validateForm() {
+            const userName = document.getElementById('userName').value.trim();
+            const questionCount = parseInt(document.getElementById('questionCount').value);
+            const checkedTopics = document.querySelectorAll('#topicsGrid input[type="checkbox"]:checked');
+
+            const isValid = userName !== '' && 
+                          questionCount >= 1 && 
+                          questionCount <= 20 && 
+                          checkedTopics.length > 0;
+
+            document.getElementById('startQuizBtn').disabled = !isValid;
+        }
+
+        function startQuiz() {
+            currentState.userName = document.getElementById('userName').value.trim();
+            currentState.questionCount = parseInt(document.getElementById('questionCount').value);
+
+            const checkedTopics = document.querySelectorAll('#topicsGrid input[type="checkbox"]:checked');
+            currentState.selectedTopics = Array.from(checkedTopics).map(cb => cb.value);
+
+            let availableQuestions = [];
+            currentState.selectedTopics.forEach(topic => {
+                if (questionBank[topic]) {
+                    availableQuestions = availableQuestions.concat(
+                        questionBank[topic].map(q => ({...q, topic: topic}))
+                    );
+                }
+            });
+
+            availableQuestions = shuffleArray(availableQuestions);
+            currentState.currentQuestions = availableQuestions.slice(0, currentState.questionCount);
+
+            currentState.currentQuestionIndex = 0;
+            currentState.userAnswers = new Array(currentState.questionCount).fill(null);
+            currentState.startTime = new Date();
+
+            document.getElementById('setupPage').classList.add('hidden');
+            document.getElementById('quizPage').classList.remove('hidden');
+
+            document.getElementById('selectedTopicsDisplay').textContent = 
+                `Topics: ${currentState.selectedTopics.join(', ')}`;
+
+            loadQuestion();
+        }
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function loadQuestion() {
+            const question = currentState.currentQuestions[currentState.currentQuestionIndex];
+
+            document.getElementById('questionCounter').textContent = 
+                `Question ${currentState.currentQuestionIndex + 1} of ${currentState.questionCount}`;
+
+            document.getElementById('questionText').innerHTML = 
+                `<strong>${question.topic}:</strong><br>${question.question}`;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            Object.entries(question.options).forEach(([key, value]) => {
+                const option = document.createElement('div');
+                option.className = 'option';
+                if (currentState.userAnswers[currentState.currentQuestionIndex] === key) {
+                    option.classList.add('selected');
+                }
+                option.onclick = () => selectAnswer(key);
+                option.innerHTML = `
+                    <span class="option-label">${key}.</span>
+                    <span class="option-text">${value}</span>
+                `;
+                optionsContainer.appendChild(option);
+            });
+
+            const nextBtn = document.getElementById('nextBtn');
+            if (currentState.currentQuestionIndex === currentState.questionCount - 1) {
+                nextBtn.textContent = 'Finish Quiz';
+            } else {
+                nextBtn.textContent = 'Next Question';
+            }
+        }
+
+        function selectAnswer(optionKey) {
+            currentState.userAnswers[currentState.currentQuestionIndex] = optionKey;
+
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+        }
+
+        function nextQuestion() {
+            if (currentState.currentQuestionIndex < currentState.questionCount - 1) {
+                currentState.currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            let correct = 0;
+            let wrong = 0;
+            let missed = 0;
+
+            currentState.currentQuestions.forEach((question, index) => {
+                const userAnswer = currentState.userAnswers[index];
+                if (userAnswer === null) {
+                    missed++;
+                } else if (userAnswer === question.correct) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+
+            const percentage = Math.round((correct / currentState.questionCount) * 100);
+            const baseUsers = 1000 + Math.floor(Math.random() * 500);
+            const totalUsers = baseUsers + Math.floor(Math.random() * 100);
+
+            document.getElementById('resultUserName').textContent = currentState.userName;
+            document.getElementById('correctCount').textContent = correct;
+            document.getElementById('wrongCount').textContent = wrong;
+            document.getElementById('missedCount').textContent = missed;
+            document.getElementById('performanceText').textContent = 
+                `You performed better than ${percentage}% of ${totalUsers.toLocaleString()} users`;
+
+            generateReview();
+            drawResultsChart(correct, wrong, missed);
+
+            document.getElementById('quizPage').classList.add('hidden');
+            document.getElementById('resultsPage').classList.remove('hidden');
+        }
+
+        function generateReview() {
+            const reviewContainer = document.getElementById('reviewContainer');
+            reviewContainer.innerHTML = '';
+
+            currentState.currentQuestions.forEach((question, index) => {
+                const userAnswer = currentState.userAnswers[index];
+                const isCorrect = userAnswer === question.correct;
+                const isMissed = userAnswer === null;
+
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = `review-question ${isCorrect ? 'correct-answer' : (isMissed ? '' : 'wrong-answer')}`;
+
+                let statusIcon = isCorrect ? '✅' : (isMissed ? '⚠️' : '❌');
+                let statusText = isCorrect ? 'Correct' : (isMissed ? 'Missed' : 'Incorrect');
+
+                reviewDiv.innerHTML = `
+                    <div class="review-q-text">
+                        ${statusIcon} Question ${index + 1} - ${statusText}
+                    </div>
+                    <p><strong>${question.topic}:</strong> ${question.question}</p>
+                    ${userAnswer !== null ? `
+                        <div class="review-answer user-answer">
+                            <strong>Your Answer:</strong> ${userAnswer}. ${question.options[userAnswer]}
+                        </div>
+                    ` : '<div class="review-answer user-answer"><strong>Your Answer:</strong> Not answered</div>'}
+                    ${!isCorrect ? `
+                        <div class="review-answer correct-answer-show">
+                            <strong>Correct Answer:</strong> ${question.correct}. ${question.options[question.correct]}
+                        </div>
+                    ` : ''}
+                    <div class="review-explanation">
+                        <strong>Explanation:</strong> ${question.explanation}
+                    </div>
+                `;
+
+                reviewContainer.appendChild(reviewDiv);
+            });
+        }
+
+        function drawResultsChart(correct, wrong, missed) {
+            const canvas = document.getElementById('resultsChart');
+            const ctx = canvas.getContext('2d');
+
+            const data = [
+                { label: 'Correct', value: correct, color: '#28a745' },
+                { label: 'Wrong', value: wrong, color: '#dc3545' },
+                { label: 'Missed', value: missed, color: '#6c757d' }
+            ];
+
+            const total = correct + wrong + missed;
+            const barWidth = 100;
+            const barSpacing = 50;
+            const startX = (canvas.width - (data.length * barWidth + (data.length - 1) * barSpacing)) / 2;
+            const maxHeight = 150;
+            const baseY = 180;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            data.forEach((item, index) => {
+                const x = startX + index * (barWidth + barSpacing);
+                const height = (item.value / total) * maxHeight;
+                const y = baseY - height;
+
+                ctx.fillStyle = item.color;
+                ctx.fillRect(x, y, barWidth, height);
+
+                ctx.fillStyle = '#000';
+                ctx.font = 'bold 20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(item.value, x + barWidth / 2, y - 5);
+
+                ctx.font = '14px Arial';
+                ctx.fillText(item.label, x + barWidth / 2, baseY + 20);
+            });
+        }
+    </script>
+</body>
+</html>
